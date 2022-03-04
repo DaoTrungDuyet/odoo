@@ -4,12 +4,6 @@
 from odoo import fields, models
 from dateutil.relativedelta import relativedelta
 
-READONLY_STATES = {
-    'purchase': [('readonly', True)],
-    'done': [('readonly', True)],
-    'cancel': [('readonly', True)],
-}
-
 
 class Property(models.Model):
     _name = "estate.property"
@@ -23,7 +17,7 @@ class Property(models.Model):
         copy=False, default=fields.date.today()+relativedelta(months=3))
     expected_price = fields.Float('Expected Price', required=True)
     selling_price = fields.Float(
-        'Selling Price', copy=False, states=READONLY_STATES)
+        'Selling Price', copy=False, readonly=True)
     bedrooms = fields.Integer('Bedrooms', default=2)
     living_area = fields.Integer('Living Area')
     facades = fields.Integer('Facades')
