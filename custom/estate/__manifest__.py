@@ -8,7 +8,7 @@
     'sequence': 15,
     'summary': 'Custom addons by guideline exercise',
     'description': "",
-    'website': 'https://www.odoo.com/page/crm',
+    'website': '#',
     'depends': [
         'base_setup',
     ],
